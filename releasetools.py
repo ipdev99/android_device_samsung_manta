@@ -15,6 +15,11 @@
 import common
 import struct
 
+def IncrementalOTA_InstallBegin(info):
+  info.script.Unmount("/system")
+  info.script.TunePartition("/system", "-O", "^has_journal")
+  info.script.Mount("/system")
+
 def FullOTA_PostValidate(info):
   # run e2fsck
   info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/dw_mmc.0/by-name/system");');
