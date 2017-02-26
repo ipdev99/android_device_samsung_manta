@@ -19,7 +19,8 @@ PRODUCT_COPY_FILES := \
     device/samsung/manta/init.manta.usb.rc:root/init.manta.usb.rc \
     device/samsung/manta/init.recovery.manta.rc:root/init.recovery.manta.rc \
     device/samsung/manta/fstab.manta:root/fstab.manta \
-    device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc
+    device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc \
+    device/samsung/manta/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Input device files for manta
 PRODUCT_COPY_FILES += \
@@ -69,7 +70,9 @@ PRODUCT_PACKAGES := \
 # audio effects
 PRODUCT_PACKAGES += libaudience_voicefx
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/audio_effects.conf:system/etc/audio_effects.conf
+    device/samsung/manta/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/fmas_eq.dat:system/etc/fmas_eq.dat \
+    $(LOCAL_PATH)/libfmas.so:system/lib/soundfx/libfmas.so
 
 # BCM47511 GPS
 PRODUCT_COPY_FILES += \
