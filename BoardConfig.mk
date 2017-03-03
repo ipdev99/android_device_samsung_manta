@@ -14,8 +14,10 @@
 # limitations under the License.
 #
 
-# Don't use the CM charger
-WITH_CM_CHARGER := false
+# These two variables are set first, so they can be overridden
+# by BoardConfigVendor.mk
+BOARD_USES_GENERIC_AUDIO := true
+BOARD_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
 # Default values, possibly overridden by BoardConfigVendor.mk
 TARGET_BOARD_INFO_FILE := device/samsung/manta/board-info.txt
@@ -26,46 +28,57 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/manta/bluetooth
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := lineage_manta_defconfig
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+TARGET_KERNEL_CONFIG := aosp_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+TARGET_GCC_VERSION_ARM := 4.7
 
 #Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
 BCM_BLUETOOTH_MANTA_BUG := true
 
-# build/core/Makefile
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
 TARGET_NO_BOOTLOADER := true
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOOTLOADER_BOARD_NAME := manta
 
+BOARD_EGL_CFG := device/samsung/manta/egl.cfg
+
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 
+#BOARD_USES_HGL := true
+#BOARD_USES_OVERLAY := true
+USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_OMX_LEGACY_RESCALING := true
 
 TARGET_RECOVERY_FSTAB = device/samsung/manta/fstab.manta
-RECOVERY_FSTAB_VERSION := 2
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_BOOTIMAGE_PARTITION_SIZE:= 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE:= 33488896
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 826277888
 # Disable journaling on system.img to save space.
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 29783752704
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 14273216512
 BOARD_CACHEIMAGE_PARTITION_SIZE := 553648128
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
+
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= false
+WITH_DEXPREOPT := false
+DONT_DEXPREOPT_PREBUILTS := true
+
+#TARGET_PROVIDES_INIT_RC := true
+#TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -81,43 +94,16 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.manta libdumpstate.manta
 
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 
-# Media
-TARGET_OMX_LEGACY_RESCALING := true
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
 
-# Default card id for USB audio
-BOARD_USB_AUDIO_CARD_ID := 2
+BOARD_SEPOLICY_DIRS += device/samsung/manta/sepolicy
 
-BOARD_SEPOLICY_DIRS += \
-	device/samsung/manta/sepolicy
-
-BOARD_INV_LIBMLLITE_FROM_SOURCE := true
-
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-TARGET_BOOTANIMATION_USE_RGB565 := true
-
-# Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/manta/seccomp
 
-#TWRP
-#TARGET_PREBUILT_KERNEL := device/samsung/manta/kernel
-#TARGET_RECOVERY_UI_LIB := librecovery_ui_manta
-#TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-DEVICE_RESOLUTION := 2560x1600
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_CUSTOM_BATTERY_PATH := /sys/devices/virtual/power_supply/manta-battery/subsystem/ds2784-fuelgauge
-#TW_DISABLE_TTF := true
-TW_NO_CPU_TEMP := true
-#TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/power_supply/manta-battery/subsystem/ds2784-fuelgauge/temp
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
-#TW_INCLUDE_L_CRYPTO := true
-TW_INCLUDE_CRYPTO := true
-#TW_SCREEN_BLANK_ON_BOOT := true
-TW_INCLUDE_MTP := true
+USE_CLANG_PLATFORM_BUILD := true
+MALLOC_SVELTE := true
+# MALLOC_IMPL := dlmalloc
 
+BOARD_INV_LIBMLLITE_FROM_SOURCE := true

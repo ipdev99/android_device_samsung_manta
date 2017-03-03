@@ -4,23 +4,53 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
 on init
-    symlink /sdcard /storage/sdcard0
+    start watchdogd
+
+    # create directory for mounting usb drives
+    mkdir /storage/usbdisk 0666 system system
+    symlink /storage/usbdisk /mnt/usbdisk
+    symlink /mnt/usbdisk /usbdisk
+
+    mkdir /mnt/media_rw/usbdisk 0775 system system
+
+# KSM
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+#    write /sys/kernel/mm/ksm/run 1
+
+on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+
+    setprop vold.post_fs_data_done 1
+
+# permissions for bluetooth.
+	setprop ro.bt.bdaddr_path "/factory/bluetooth/bt_addr"
+	chown bluetooth net_bt_stack ro.bt.bdaddr_path
+	chown bluetooth net_bt_stack /dev/ttySAC0
+	chmod 0660 /dev/ttySAC0
+	chmod 0660 /sys/class/rfkill/rfkill0/state
+	chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+	chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+
+on boot
+    # override init.rc to keep plenty of large order chunks around
+    # to improve allocation times
+    write /proc/sys/vm/min_free_order_shift 1
 
     setprop ro.radio.noril yes
 
-    start watchdogd
+    chmod 0444 /sys/kernel/debug/smb347-regs
 
-# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
-service watchdogd /sbin/watchdogd 10 20
-    class core
-    seclabel u:r:watchdogd:s0
+# Set Mali power policy as Coarse demand
+    write /sys/devices/platform/mali.0/power_policy coarse_demand
 
-on post-fs
-    # Turn on swap
-    swapon_all /fstab.manta
-
-on post-fs-data
+on fs
     mkdir /factory 0775 radio radio
+
+    mount_all /fstab.manta
+    restorecon_recursive /factory
+    mount ext4 /dev/block/platform/dw_mmc.0/by-name/efs /factory ro remount
+    setprop ro.crypto.fuse_sdcard true
 
 # Permissions for backlight
     chmod 0660 /sys/class/backlight/pwm-backlight.0/brightness
@@ -58,35 +88,13 @@ on post-fs-data
     chown root audio /sys/class/i2c-dev/i2c-4/device/4-003e/aec_enable
     chmod 0660 /sys/class/i2c-dev/i2c-4/device/4-003e/aec_enable
 
-# permissions for bluetooth.
-    setprop ro.bt.bdaddr_path "/factory/bluetooth/bt_addr"
-    chown bluetooth net_bt_stack ro.bt.bdaddr_path
-    chown bluetooth net_bt_stack /dev/ttySAC0
-    chmod 0660 /dev/ttySAC0
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+# virtual sdcard daemon running as media_rw (1023)
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
+    class late_start
 
-    setprop vold.post_fs_data_done 1
-
-on boot
-    chmod 0444 /sys/kernel/debug/smb347-regs
-
-   # Set Mali power policy as Coarse demand
-    write /sys/devices/platform/mali.0/power_policy coarse_demand
-
-    # Assign TCP buffer thresholds to be ceiling value of technology maximums
-    # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
-
-on fs
-    mount_all fstab.manta
-
-service battery_charger /charger
-    class charger
-    critical
-    seclabel u:r:healthd:s0
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -116,7 +124,16 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
-    oneshot
+
+service battery_charger /charger
+    class charger
+    critical
+    seclabel u:r:healthd:s0
+
+# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+service watchdogd /sbin/watchdogd 10 20
+    class core
+    seclabel u:r:watchdogd:s0
 
 service gpsd /system/vendor/bin/gpsd -c /system/vendor/etc/gps.xml
     class main
@@ -135,3 +152,11 @@ service mobicore /system/bin/mcDriverDaemon -r /system/vendor/secapp/020a0000000
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ2
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
+
+# bugreport is triggered by holding down volume down, volume up and power
+service bugreport /system/bin/dumpstate -d -p -B \
+        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+    keycodes 114 115 116

@@ -21,6 +21,14 @@
 # lines, full and manta, hence its name.
 #
 
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+        LiveWallpapers \
+        LiveWallpapersPicker \
+        MagicSmokeWallpapers \
+        VisualizationWallpapers \
+        librs_jni
+
 PRODUCT_PROPERTY_OVERRIDES := \
         net.dns1=8.8.8.8 \
         net.dns2=8.8.4.4
@@ -31,7 +39,7 @@ $(call inherit-product, device/samsung/manta/device.mk)
 
 PRODUCT_NAME := full_manta
 PRODUCT_DEVICE := manta
-PRODUCT_BRAND := Google
-PRODUCT_MODEL := Nexus 10
+PRODUCT_BRAND := Android
+PRODUCT_MODEL := AOSP on Manta
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_RESTRICT_VENDOR_FILES := false
