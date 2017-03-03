@@ -107,3 +107,25 @@ MALLOC_SVELTE := true
 # MALLOC_IMPL := dlmalloc
 
 BOARD_INV_LIBMLLITE_FROM_SOURCE := true
+
+#TWRP
+#TARGET_PREBUILT_KERNEL := device/samsung/manta/kernel
+#TARGET_RECOVERY_UI_LIB := librecovery_ui_manta
+#TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+DEVICE_RESOLUTION := 2560x1600
+TW_THEME := landscape_hdpi
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_CUSTOM_BATTERY_PATH := /sys/devices/virtual/power_supply/manta-battery/subsystem/ds2784-fuelgauge
+#TW_DISABLE_TTF := true
+TW_NO_CPU_TEMP := true
+#TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/power_supply/manta-battery/subsystem/ds2784-fuelgauge/temp
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
+#TW_SCREEN_BLANK_ON_BOOT := true
+TW_INCLUDE_MTP := true
+
+
