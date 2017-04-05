@@ -221,6 +221,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
