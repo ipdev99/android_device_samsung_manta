@@ -268,6 +268,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        debug.hwui.use_buffer_age=false
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
