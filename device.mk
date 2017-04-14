@@ -150,6 +150,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.hwui.disable_scissor_opt=true \
     af.fast_track_multiplier=1
 
+# Configure ro.recents.grid
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.recents.grid=true
+
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
