@@ -93,6 +93,8 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.manta libdumpstate.manta
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
+
 # Media
 #TARGET_OMX_LEGACY_RESCALING := true
 
