@@ -67,6 +67,10 @@ PRODUCT_PACKAGES := \
     wpa_supplicant \
     wpa_supplicant.conf
 
+PRODUCT_COPY_FILES += \
+    device/samsung/manta/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    device/samsung/manta/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
 # audio effects
 PRODUCT_PACKAGES += libaudience_voicefx
 PRODUCT_COPY_FILES += \
