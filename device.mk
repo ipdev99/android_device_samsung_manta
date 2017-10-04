@@ -147,6 +147,7 @@ PRODUCT_COPY_FILES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service \
     nfc_nci.bcm2079x.default \
     NfcNci \
     Tag
@@ -155,7 +156,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/samsung/manta/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+    device/samsung/manta/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
