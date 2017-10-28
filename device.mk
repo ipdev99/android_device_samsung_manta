@@ -106,8 +106,7 @@ PRODUCT_PACKAGES += \
 # libstlport, but some of our binary-only prebuilts need it, so we'll add it back in
 # in source and here
 PRODUCT_PACKAGES += \
-    libdmitry \
-    libstlport
+    libdmitry
 
 PRODUCT_AAPT_CONFIG := xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
