@@ -39,6 +39,8 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 DEVICE_MANIFEST_FILE := device/samsung/manta/manifest.xml
 
+WITH_LINEAGE_CHARGER := false
+
 BOARD_KERNEL_IMAGE_NAME = zImage
 
 #Bluetooth
