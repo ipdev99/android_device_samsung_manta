@@ -80,6 +80,8 @@ on boot
     write /proc/sys/net/core/rmem_max  8388608
     write /proc/sys/net/core/wmem_max  8388608
 
+    chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+
 on fs
     mount_all fstab.manta
 
