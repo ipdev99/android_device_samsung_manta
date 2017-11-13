@@ -42,6 +42,9 @@ TARGET_GCC_VERSION_ARM := 4.7
 
 DEVICE_MANIFEST_FILE := device/samsung/manta/manifest.xml
 
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
 #Bluetooth
 BCM_BLUETOOTH_MANTA_BUG := true
 
