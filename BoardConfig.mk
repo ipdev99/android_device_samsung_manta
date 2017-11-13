@@ -92,6 +92,8 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 # Media
 #TARGET_OMX_LEGACY_RESCALING := true
 
+TARGET_USES_ION := true
+
 # Default card id for USB audio
 BOARD_USB_AUDIO_CARD_ID := 2
 
