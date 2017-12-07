@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/samsung/manta/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+    device/samsung/manta/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
