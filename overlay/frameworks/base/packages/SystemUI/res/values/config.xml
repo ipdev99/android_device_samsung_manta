@@ -16,5 +16,12 @@
   -->
 
 <resources>
+
     <bool name="config_status_bar_scrim_behind_use_src">false</bool>
+
+    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
+         does not work well, particularly with noisy touchscreens. Note that disabling it may
+         increase the rate of unintentional unlocks. -->
+    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+
 </resources>
