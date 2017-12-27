@@ -97,6 +97,8 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 TARGET_USES_ION := true
 
+TARGET_USES_GRALLOC1_ADAPTER := true
+
 # Default card id for USB audio
 BOARD_USB_AUDIO_CARD_ID := 2
 
