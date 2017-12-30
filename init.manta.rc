@@ -53,8 +53,8 @@ on fs
     chown gps system /data/gps
 
 # NFC: create data/nfc for nv storage
-    mkdir /data/nfc 770 nfc nfc
-    mkdir /data/nfc/param 770 nfc nfc
+#    mkdir /data/nfc 770 nfc nfc
+#    mkdir /data/nfc/param 770 nfc nfc
 
 # audio: permissions for voice processing
     # global switch for voice processing effects
