@@ -108,9 +108,6 @@ PRODUCT_PACKAGES += \
     sensors.manta \
     sensors.exynos5
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
-
 # GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
