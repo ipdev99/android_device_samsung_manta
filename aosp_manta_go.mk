@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The Android Open Source Project
+# Copyright 2013 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, device/samsung/manta/full_manta.mk)
 
-add_lunch_combo aosp_manta-userdebug
-add_lunch_combo aosp_manta_go-userdebug
+# Inherit common Android Go defaults.
+$(call inherit-product, build/target/product/go_defaults_common.mk)
+
+PRODUCT_NAME := aosp_manta_go
