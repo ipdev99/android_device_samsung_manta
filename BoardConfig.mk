@@ -107,6 +107,14 @@ BOARD_SEPOLICY_DIRS += \
 
 BOARD_INV_LIBMLLITE_FROM_SOURCE := true
 
+# Shims: libui
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib/libui_shim.so
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true

@@ -170,6 +170,15 @@ PRODUCT_PACKAGES += \
     gralloc.exynos5
 
 PRODUCT_PACKAGES += \
+    libExynosOMX_shim \
+    libui_shim \
+    hwcomposer.exynos5
+
+# Overriden service definition
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+
+PRODUCT_PACKAGES += \
     libion
 
 PRODUCT_PACKAGES += \
