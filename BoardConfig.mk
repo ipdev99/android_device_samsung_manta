@@ -115,6 +115,10 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib/libui_shim.so \
     /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib/libui_shim.so
 
+# Shims: gpsd
+TARGET_LD_SHIM_LIBS += \
+    /system/vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
