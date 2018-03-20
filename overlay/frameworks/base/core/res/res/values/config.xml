@@ -193,10 +193,6 @@
 
     <bool name="config_enableWifiDisplay">true</bool>
 
-   <!-- Control whether Night display is available. This should only be enabled on devices
-           with HWC 2.0 or higher. -->
-    <bool name="config_nightDisplayAvailable">true</bool>
-
     <!-- Enable doze mode
          ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
