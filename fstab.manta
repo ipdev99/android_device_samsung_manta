@@ -15,4 +15,5 @@
 /dev/block/mmcblk0boot0                          /bootloader     emmc      defaults                                                                 defaults
 /dev/block/mmcblk0boot1                          /bootloader1    emmc      defaults                                                                 defaults
 /dev/block/platform/dw_mmc.0/by-name/param       /param          emmc      defaults                                                                 defaults
+/dev/block/zram0                                 none            swap      defaults                                                                 zramsize=524288000
 /devices/platform/s5p-ehci/usb*                  auto            auto      defaults                                                                 voldmanaged=usb:auto
