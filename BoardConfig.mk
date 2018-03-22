@@ -119,6 +119,10 @@ TARGET_LD_SHIM_LIBS := \
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
 
+# Shims: camera - missed symbol _ZN7android13GraphicBufferC1EjjijjP13native_handleb
+TARGET_LD_SHIM_LIBS += \
+    /system/vendor/lib/hw/camera.exynos5.so|/vendor/lib/libshim_camera.so
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
