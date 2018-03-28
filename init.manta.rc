@@ -151,3 +151,7 @@ service bugreport /system/bin/dumpstate -d -p -B \
     disabled
     oneshot
     keycodes 114 115 116
+
+# set medium profile for LOW_MEMORY_KILLER
+on property:dev.bootcomplete=1
+    write /sys/module/lowmemorykiller/parameters/minfree 8415,11220,14025,16830,19635,25245
