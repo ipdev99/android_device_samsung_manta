@@ -9,6 +9,9 @@ $(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
+# Inherit common Android Go defaults.
+$(call inherit-product, build/target/product/go_defaults.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := manta
 PRODUCT_NAME := lineage_manta
