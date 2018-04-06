@@ -124,3 +124,7 @@ service mobicore /system/bin/mcDriverDaemon -r /system/vendor/secapp/020a0000000
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ2
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
+
+# set default values for LOW_MEMORY_KILLER
+on property:dev.bootcomplete=1
+    write /sys/module/lowmemorykiller/parameters/minfree 5610,8415,16830,28050,39270,42075
