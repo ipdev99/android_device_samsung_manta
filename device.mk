@@ -233,6 +233,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bionic.ld.warning=0
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
