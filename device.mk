@@ -280,6 +280,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        debug.hwui.use_buffer_age=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bionic.ld.warning=0
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
