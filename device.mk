@@ -236,6 +236,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bionic.ld.warning=0
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
