@@ -24,6 +24,9 @@ on post-fs
     # Turn on swap
     # swapon_all /fstab.manta
 
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
 on post-fs-data
     mkdir /factory 0775 radio radio
 
