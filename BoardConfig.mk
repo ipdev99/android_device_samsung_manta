@@ -46,6 +46,9 @@ BOARD_KERNEL_IMAGE_NAME = zImage
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# aapt: opting out of uncompressed aapt
+TARGET_WANTS_AAPT_COMPRESS := true
+
 #Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
