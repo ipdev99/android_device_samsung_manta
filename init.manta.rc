@@ -78,6 +78,10 @@ on fs
     chown root audio /sys/class/i2c-dev/i2c-4/device/4-003e/aec_enable
     chmod 0660 /sys/class/i2c-dev/i2c-4/device/4-003e/aec_enable
 
+on post-fs
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
