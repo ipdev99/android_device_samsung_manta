@@ -33,8 +33,9 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
+BUILD_TOP := $(shell pwd)
 # Define kernel config for inline building
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
+KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_KERNEL_CONFIG := aosp_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
@@ -82,10 +83,6 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 553648128
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= false
-WITH_DEXPREOPT := false
-DONT_DEXPREOPT_PREBUILTS := true
-
 #TARGET_PROVIDES_INIT_RC := true
 #TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
@@ -111,7 +108,7 @@ BOARD_SEPOLICY_DIRS += device/samsung/manta/sepolicy
 
 BOARD_SECCOMP_POLICY += device/samsung/manta/seccomp
 
-USE_CLANG_PLATFORM_BUILD := true
+#USE_CLANG_PLATFORM_BUILD := true
 MALLOC_SVELTE := true
 # MALLOC_IMPL := dlmalloc
 
@@ -126,6 +123,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 #TWRP
 #TARGET_PREBUILT_KERNEL := device/samsung/manta/kernel
