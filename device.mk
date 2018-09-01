@@ -242,6 +242,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.first_api_level=17
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
