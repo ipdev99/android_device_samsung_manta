@@ -51,7 +51,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+    device/samsung/manta/bcmdhd.cal:system/vendor/etc/wifi/bcmdhd.cal
 
 # audio mixer paths
 PRODUCT_COPY_FILES += \
@@ -70,8 +70,8 @@ PRODUCT_PACKAGES := \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/samsung/manta/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+    device/samsung/manta/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
+    device/samsung/manta/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 # audio effects
 PRODUCT_PACKAGES += libaudience_voicefx
