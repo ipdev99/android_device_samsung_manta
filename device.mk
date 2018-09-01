@@ -289,6 +289,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.first_api_level=17
+
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
