@@ -114,6 +114,18 @@ MALLOC_SVELTE := true
 
 BOARD_INV_LIBMLLITE_FROM_SOURCE := true
 
+# Shims: libui
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.AVC.Encoder.so|libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|libui_shim.so
+
+# Shims: gpsd
+TARGET_LD_SHIM_LIBS += \
+    /system/vendor/bin/gpsd|gpsd_shim.so
+
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
