@@ -4,7 +4,7 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
 on init
-    export LD_SHIM_LIBS /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib/libui_shim.so:/system/vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
+    export LD_SHIM_LIBS /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib/libui_shim.so:/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib/libui_shim.so:/system/vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
 
     start watchdogd
 
