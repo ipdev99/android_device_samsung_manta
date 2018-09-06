@@ -239,9 +239,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=17
 
