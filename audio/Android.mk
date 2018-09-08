@@ -22,7 +22,7 @@ LOCAL_SRC_FILES := \
 	audio_hw.c
 
 LOCAL_C_INCLUDES += \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
+	device/samsung/manta/audio/include \
 	external/tinyalsa/include \
 	hardware/samsung_slsi/exynos5/include \
 	device/samsung/manta/bubblelevel \
