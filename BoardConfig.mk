@@ -139,6 +139,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 #TWRP
 #TARGET_PREBUILT_KERNEL := device/samsung/manta/kernel
