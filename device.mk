@@ -242,6 +242,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=17
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwc.force_gpu=1
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
