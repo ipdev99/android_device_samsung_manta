@@ -243,7 +243,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=17
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwc.force_gpu=1
+    debug.hwc.force_gpu=1 \
+    debug.egl.hw=0 \
+    debug.sf.hw=0 \
+    persist.sys.ui.hw=false
 
 # for off charging mode
 PRODUCT_PACKAGES += \
