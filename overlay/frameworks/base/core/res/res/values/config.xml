@@ -191,7 +191,7 @@
 
     <bool name="config_enableTranslucentDecor">true</bool>
 
-    <bool name="config_enableWifiDisplay">true</bool>
+    <!-- <bool name="config_enableWifiDisplay">true</bool> -->
 
     <!-- Fix for Lineage LiveDisplay -->
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
