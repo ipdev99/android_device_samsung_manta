@@ -290,6 +290,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=17
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bt.enableAptX=true \
+    persist.bt.enableAptXHD=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwc.force_gpu=1 \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
