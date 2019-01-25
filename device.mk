@@ -239,6 +239,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bt.enableAptX=true \
+    persist.bt.enableAptXHD=true
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
