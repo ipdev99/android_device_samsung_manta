@@ -35,8 +35,8 @@ TARGET_KERNEL_CONFIG := followmsi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 
 BUILD_TOP := $(shell pwd)
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+#KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 DEVICE_MANIFEST_FILE := device/samsung/manta/manifest.xml
 
