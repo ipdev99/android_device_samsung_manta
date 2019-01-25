@@ -35,11 +35,11 @@ TARGET_CPU_VARIANT := cortex-a15
 
 BUILD_TOP := $(shell pwd)
 # Define kernel config for inline building
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+#KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
+#KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_KERNEL_CONFIG := aosp_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
-TARGET_GCC_VERSION_ARM := 4.7
+#TARGET_GCC_VERSION_ARM := 4.7
 
 DEVICE_MANIFEST_FILE := device/samsung/manta/manifest.xml
 
