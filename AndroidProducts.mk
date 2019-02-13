@@ -15,6 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_manta.mk \
-    $(LOCAL_DIR)/aosp_manta.mk \
-    $(LOCAL_DIR)/lineage_manta.mk
+    $(LOCAL_DIR)/aosp_manta.mk
