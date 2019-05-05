@@ -196,7 +196,7 @@
     <!-- Translucent status & navigation bars perform poorly on this device -->
     <bool name="config_enableTranslucentDecor">true</bool>
 
-    <!-- <bool name="config_enableWifiDisplay">true</bool> -->
+    <bool name="config_enableWifiDisplay">true</bool>
 
    <!-- Control whether Night display is available. This should only be enabled on devices
            with HWC 2.0 or higher. -->
