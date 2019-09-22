@@ -30,11 +30,13 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := followmsi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 
-BUILD_TOP := $(shell pwd)
+#BUILD_TOP := $(shell pwd)
 #KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
