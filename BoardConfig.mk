@@ -33,7 +33,9 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
-BUILD_TOP := $(shell pwd)
+BUILD_BROKEN_DUP_RULES := true
+
+#BUILD_TOP := $(shell pwd)
 # Define kernel config for inline building
 #KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
 #KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
