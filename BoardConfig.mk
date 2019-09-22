@@ -106,6 +106,8 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 #TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 BOARD_SEPOLICY_DIRS += device/samsung/manta/sepolicy
 
 BOARD_SECCOMP_POLICY += device/samsung/manta/seccomp
