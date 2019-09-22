@@ -4,7 +4,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 
-/dev/block/platform/dw_mmc.0/by-name/system     /system             ext4      ro                                                    wait
+/dev/block/platform/dw_mmc.0/by-name/system     /system             ext4      ro                                                    wait,first_stage_mount
 /dev/block/platform/dw_mmc.0/by-name/cache      /cache              f2fs      rw,nosuid,nodev,noatime,nodiratime,discard,inline_xattr,inline_data,active_logs=4    wait,check
 /dev/block/platform/dw_mmc.0/by-name/cache      /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait,check
 /dev/block/platform/dw_mmc.0/by-name/userdata   /data               ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait,check,encryptable=/dev/block/platform/dw_mmc.0/by-name/metadata
