@@ -24,10 +24,10 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel \
     device/samsung/manta/init.manta.rc:root/init.manta.rc \
     device/samsung/manta/init.manta.usb.rc:root/init.manta.usb.rc \
-    device/samsung/manta/init.recovery.manta.rc:root/init.recovery.manta.rc \
+    device/samsung/manta/init.recovery.manta.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.manta.rc \
     device/samsung/manta/fstab.manta:root/fstab.manta \
     device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc \
-    device/samsung/manta/twrp.fstab:recovery/root/etc/twrp.fstab \
+    device/samsung/manta/twrp.fstab:$(TARGET_COPY_OUT_RECOVERY)/root/twrp.fstab \
     $(LOCAL_PATH)/fstab.manta:$(TARGET_COPY_OUT_RAMDISK)/fstab.manta \
     $(LOCAL_PATH)/fstab.manta:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.manta
 
