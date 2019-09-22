@@ -109,6 +109,8 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
 # Default card id for USB audio
 BOARD_USB_AUDIO_CARD_ID := 2
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 BOARD_SEPOLICY_DIRS += \
 	device/samsung/manta/sepolicy
 
