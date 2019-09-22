@@ -71,7 +71,7 @@ ssize_t InputEventCircularReader::fill(int fd)
             iov[1].iov_len = numSecond * sizeof(iio_event_data);
         }
 
-        const ssize_t nread = readv(fd, iov, iovcnt);
+        const ssize_t nread = read(fd, iov, iovcnt);
         if (nread < 0 || nread % sizeof(iio_event_data)) {
             // we got a partial event!!
             return nread < 0 ? -errno : -EINVAL;
