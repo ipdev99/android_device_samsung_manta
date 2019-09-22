@@ -20,7 +20,9 @@ PRODUCT_COPY_FILES := \
     device/samsung/manta/init.recovery.manta.rc:root/init.recovery.manta.rc \
     device/samsung/manta/fstab.manta:root/fstab.manta \
     device/samsung/manta/ueventd.manta.rc:root/ueventd.manta.rc \
-    device/samsung/manta/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/samsung/manta/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/fstab.manta:$(TARGET_COPY_OUT_RAMDISK)/fstab.manta \
+    $(LOCAL_PATH)/fstab.manta:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.manta
 
 # Input device files for manta
 PRODUCT_COPY_FILES += \
