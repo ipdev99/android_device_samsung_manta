@@ -14,4 +14,13 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_manta.mk $(LOCAL_DIR)/aosp_manta.mk $(LOCAL_DIR)/aosp_manta_go.mk
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aosp_manta.mk \
+    $(LOCAL_DIR)/aosp_manta_go.mk \
+    $(LOCAL_DIR)/full_manta.mk
+
+COMMON_LUNCH_CHOICES := \
+    aosp_manta-userdebug \
+    aosp_manta-eng \
+    aosp_manta_go-userdebug \
+    aosp_manta_go-eng
