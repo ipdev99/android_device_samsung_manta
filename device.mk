@@ -105,7 +105,7 @@ PRODUCT_COPY_FILES += \
 # audio effects
 PRODUCT_PACKAGES += libaudience_voicefx
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/samsung/manta/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/fmas_eq.dat:system/vendor/etc/fmas_eq.dat \
     $(LOCAL_PATH)/libfmas.so:system/vendor/lib/soundfx/libfmas.so
 
