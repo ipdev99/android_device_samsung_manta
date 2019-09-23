@@ -53,13 +53,28 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/manta/bcmdhd.cal:system/vendor/etc/wifi/bcmdhd.cal
 
+# Audio configuration
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # audio mixer paths
 PRODUCT_COPY_FILES += \
     device/samsung/manta/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # audio policy configuration
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/audio_policy.conf:system/etc/audio_policy.conf
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    device/samsung/manta/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
+# audio effects
+PRODUCT_PACKAGES += libaudience_voicefx
+PRODUCT_COPY_FILES += \
+    device/samsung/manta/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/fmas_eq.dat:system/vendor/etc/fmas_eq.dat \
+    $(LOCAL_PATH)/libfmas.so:system/vendor/lib/soundfx/libfmas.so
 
 PRODUCT_PACKAGES := \
     libwpa_client \
@@ -72,13 +87,6 @@ PRODUCT_PACKAGES := \
 PRODUCT_COPY_FILES += \
     device/samsung/manta/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     device/samsung/manta/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
-
-# audio effects
-PRODUCT_PACKAGES += libaudience_voicefx
-PRODUCT_COPY_FILES += \
-    device/samsung/manta/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/fmas_eq.dat:system/vendor/etc/fmas_eq.dat \
-    $(LOCAL_PATH)/libfmas.so:system/vendor/lib/soundfx/libfmas.so
 
 # BCM47511 GPS
 PRODUCT_COPY_FILES += \
