@@ -130,8 +130,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|libui_shim.so
 
 # Shims: gpsd
-TARGET_LD_SHIM_LIBS += \
-    /system/vendor/bin/gpsd|gpsd_shim.so
+#TARGET_LD_SHIM_LIBS += \
+#    /system/vendor/bin/gpsd|gpsd_shim.so
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)

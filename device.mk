@@ -127,11 +127,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/manta/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 # GNSS HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
-
-PRODUCT_PACKAGES += \
-    gpsd_shim
+#PRODUCT_PACKAGES += \
+#    android.hardware.gnss@1.0-impl
+#
+#PRODUCT_PACKAGES += \
+#    gpsd_shim
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -158,11 +158,11 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
 
 # BCM47511 GPS
-PRODUCT_COPY_FILES += \
-    device/samsung/manta/gps/gps.conf:system/etc/gps.conf \
-    device/samsung/manta/gps/gpsd:system/vendor/bin/gpsd \
-    device/samsung/manta/gps/gps.xml:system/vendor/etc/gps.xml \
-    device/samsung/manta/gps/gps.manta.so:system/lib/hw/gps.manta.so
+#PRODUCT_COPY_FILES += \
+#    device/samsung/manta/gps/gps.conf:system/etc/gps.conf \
+#    device/samsung/manta/gps/gpsd:system/vendor/bin/gpsd \
+#    device/samsung/manta/gps/gps.xml:system/vendor/etc/gps.xml \
+#    device/samsung/manta/gps/gps.manta.so:system/lib/hw/gps.manta.so
 
 # NFC packages
 #PRODUCT_PACKAGES += \
