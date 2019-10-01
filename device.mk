@@ -297,6 +297,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=17
 
 PRODUCT_PROPERTY_OVERRIDES += \
