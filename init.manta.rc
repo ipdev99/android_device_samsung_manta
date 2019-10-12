@@ -84,6 +84,10 @@ on post-fs
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
+    # avoid USB crash
+    setprop persist.adb.nonblocking_ffs 0
+    setprop ro.adb.nonblocking_ffs 0
+
     # Create the directories used by the Wireless subsystem
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
