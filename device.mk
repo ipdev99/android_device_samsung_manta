@@ -261,6 +261,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=0 \
     persist.sys.ui.hw=false
 
+# set default USB configuration
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
