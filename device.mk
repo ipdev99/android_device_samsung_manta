@@ -126,9 +126,6 @@ PRODUCT_PACKAGES += \
     gpsd_shim
 
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
-PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl
 
 # USB HAL
