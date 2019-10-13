@@ -31,5 +31,6 @@ LOCAL_CFLAGS := -Wno-unused-parameter
 LOCAL_SHARED_LIBRARIES := liblog libcutils libtinyalsa libaudioutils libbubblelevel \
 	libaudience_voicefx libaudioroute
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
