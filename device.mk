@@ -153,9 +153,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl
 
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
 # BCM47511 GPS
 #PRODUCT_COPY_FILES += \
 #    device/samsung/manta/gps/gps.conf:system/etc/gps.conf \
