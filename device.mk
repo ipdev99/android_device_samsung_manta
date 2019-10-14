@@ -288,9 +288,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bionic.ld.warning=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.disable_rescue=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
