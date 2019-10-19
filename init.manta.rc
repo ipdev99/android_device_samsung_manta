@@ -1,7 +1,8 @@
 import init.manta.usb.rc
 
 on early-init
-    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
 
 on init
 
@@ -34,11 +35,11 @@ on boot
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
 on fs
-    # mkdir /factory 0775 radio radio
+    mkdir /factory 0775 radio radio
 
     mount_all /fstab.manta
     restorecon_recursive /factory
-    mount ext4 /dev/block/platform/dw_mmc.0/by-name/efs /factory ro remount
+    # mount ext4 /dev/block/platform/dw_mmc.0/by-name/efs /factory ro remount
     # setprop ro.crypto.fuse_sdcard true
 
 # Permissions for backlight
@@ -131,7 +132,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 service battery_charger /charger
     class charger
     critical
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
