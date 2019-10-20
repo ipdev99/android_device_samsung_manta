@@ -1,7 +1,8 @@
 import init.manta.usb.rc
 
 on early-init
-    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
 
 on init
     symlink /sdcard /storage/sdcard0
@@ -131,8 +132,8 @@ service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     group system inet
 
 # MobiCore startup
-service mobicore /system/bin/mcDriverDaemon -r /system/vendor/secapp/020a0000000000000000000000000000.drbin
-    setenv MC_REGISTRY_PATH /system/vendor/secapp
+service mobicore /system/bin/mcDriverDaemon -r /vendor/secapp/020a0000000000000000000000000000.drbin
+    setenv MC_REGISTRY_PATH /vendor/secapp
     user drmrpc
     group drmrpc
     class main
