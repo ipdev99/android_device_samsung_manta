@@ -128,7 +128,7 @@ TARGET_LD_SHIM_LIBS := \
 
 # Shims: gpsd
 TARGET_LD_SHIM_LIBS += \
-    /system/vendor/bin/gpsd|gpsd_shim.so
+    /vendor/bin/gpsd|gpsd_shim.so
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
