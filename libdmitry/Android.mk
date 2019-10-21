@@ -23,4 +23,5 @@ LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils libsensor
 LOCAL_SRC_FILES := libdmitry.c
 LOCAL_MODULE := libdmitry
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
