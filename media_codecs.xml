@@ -78,8 +78,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
-    <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_telephony.xml" />
+
     <Decoders>
         <MediaCodec name="OMX.Exynos.MPEG4.Decoder" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
@@ -163,5 +162,8 @@ Only the three quirks included above are recognized at this point:
             <Limit name="bitrate" range="1-40000000" />
         </MediaCodec>
     </Encoders>
+
+    <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_video.xml" />
+
 </MediaCodecs>
