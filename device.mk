@@ -160,17 +160,17 @@ PRODUCT_COPY_FILES += \
     device/samsung/manta/gps/gps.manta.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gps.manta.so
 
 # NFC packages
-#PRODUCT_PACKAGES += \
-#    android.hardware.nfc@1.0-impl \
-#    nfc_nci.bcm2079x.default \
-#    NfcNci \
-#    Tag
-#
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl \
+    nfc_nci.bcm2079x.default \
+    NfcNci \
+    Tag
+
 # NFC access control + feature files + configuration
-#PRODUCT_COPY_FILES += \
-#    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-#    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-#    device/samsung/manta/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+    device/samsung/manta/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
