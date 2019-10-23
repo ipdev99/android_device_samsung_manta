@@ -42,9 +42,9 @@ PRODUCT_PACKAGES += \
 
 # Input device files for manta
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
-    device/samsung/manta/manta-keypad.kl:system/usr/keylayout/manta-keypad.kl \
-    device/samsung/manta/manta-keypad.kcm:system/usr/keychars/manta-keypad.kcm
+    device/samsung/manta/Atmel_maXTouch_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Atmel_maXTouch_Touchscreen.idc \
+    device/samsung/manta/manta-keypad.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/manta-keypad.kl \
+    device/samsung/manta/manta-keypad.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/manta-keypad.kcm
 
 
 # Init files for booting smdk5250 with a manta image
@@ -56,42 +56,42 @@ PRODUCT_COPY_FILES += \
 
 # Input device files for smdk5250
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/egalax_i2c.idc:system/usr/idc/egalax_i2c.idc \
-    device/samsung/manta/smdk5250-keypad.kl:system/usr/keylayout/smdk5250-keypad.kl \
-    device/samsung/manta/smdk5250-keypad.kcm:system/usr/keychars/smdk5250-keypad.kcm
+    device/samsung/manta/egalax_i2c.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/egalax_i2c.idc \
+    device/samsung/manta/smdk5250-keypad.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/smdk5250-keypad.kl \
+    device/samsung/manta/smdk5250-keypad.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/smdk5250-keypad.kcm
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/samsung/manta/media_codecs.xml:system/etc/media_codecs.xml \
-    device/samsung/manta/media_profiles.xml:system/etc/media_profiles.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tablet_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    device/samsung/manta/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    device/samsung/manta/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/bcmdhd.cal:system/vendor/etc/wifi/bcmdhd.cal
+    device/samsung/manta/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
 # Audio configuration
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # audio mixer paths
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/samsung/manta/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # audio policy configuration
 PRODUCT_COPY_FILES += \
@@ -106,8 +106,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += libaudience_voicefx
 PRODUCT_COPY_FILES += \
     device/samsung/manta/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/fmas_eq.dat:system/vendor/etc/fmas_eq.dat \
-    $(LOCAL_PATH)/libfmas.so:system/vendor/lib/soundfx/libfmas.so
+    $(LOCAL_PATH)/fmas_eq.dat:$(TARGET_COPY_OUT_VENDOR)/etc/fmas_eq.dat \
+    $(LOCAL_PATH)/libfmas.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libfmas.so
 
 # Android Marshmallow boot animation
 # PRODUCT_COPY_FILES += \
@@ -123,8 +123,8 @@ PRODUCT_PACKAGES := \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
-    device/samsung/manta/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
+    device/samsung/manta/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    device/samsung/manta/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
@@ -155,10 +155,10 @@ PRODUCT_PACKAGES += \
 
 # BCM47511 GPS
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/gps/gps.conf:system/etc/gps.conf \
-    device/samsung/manta/gps/gpsd:system/vendor/bin/gpsd \
-    device/samsung/manta/gps/gps.xml:system/vendor/etc/gps.xml \
-    device/samsung/manta/gps/gps.manta.so:system/vendor/lib/hw/gps.manta.so
+    device/samsung/manta/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    device/samsung/manta/gps/gpsd:$(TARGET_COPY_OUT_VENDOR)/bin/gpsd \
+    device/samsung/manta/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml \
+    device/samsung/manta/gps/gps.manta.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gps.manta.so
 
 # NFC packages
 #PRODUCT_PACKAGES += \
@@ -169,9 +169,9 @@ PRODUCT_COPY_FILES += \
 #
 # NFC access control + feature files + configuration
 #PRODUCT_COPY_FILES += \
-#    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-#    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-#    device/samsung/manta/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf
+#    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
+#    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+#    device/samsung/manta/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
@@ -215,7 +215,7 @@ PRODUCT_PACKAGES += \
 
 # Overriden service definition
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc
 
 PRODUCT_PACKAGES += \
     libion
