@@ -245,8 +245,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.ccodec=0
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=17
+PRODUCT_SHIPPING_API_LEVEL := 17
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.enableAptX=true \
