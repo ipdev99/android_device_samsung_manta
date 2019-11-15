@@ -23,6 +23,5 @@ LOCAL_SRC_FILES := \
 LOCAL_SHARED_LIBRARIES := liblog libutils libgui libbinder libsensor
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
