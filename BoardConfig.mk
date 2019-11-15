@@ -116,7 +116,7 @@ BOARD_USB_AUDIO_CARD_ID := 2
 SELINUX_IGNORE_NEVERALLOWS := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/manta/sepolicy_tmp
+	device/samsung/manta/sepolicy
 
 BOARD_INV_LIBMLLITE_FROM_SOURCE := true
 
