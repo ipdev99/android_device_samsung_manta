@@ -60,7 +60,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # audio mixer paths
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+    device/samsung/manta/mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/mixer_paths.xml
 
 # audio policy configuration
 PRODUCT_COPY_FILES += \
