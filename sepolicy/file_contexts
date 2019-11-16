@@ -53,4 +53,4 @@
 /dev/block/platform/dw_mmc\.0/by-name/userdata     u:object_r:userdata_block_device:s0
 /dev/block/platform/dw_mmc\.0/by-name/cache        u:object_r:cache_block_device:s0
 
-/system/vendor/bin/hw/gpsd              -- u:object_r:gpsd_exec:s0
+/system/vendor/bin/gpsd              -- u:object_r:gpsd_exec:s0
