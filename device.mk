@@ -126,7 +126,7 @@ PRODUCT_PACKAGES += \
     gpsd_shim
 
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service
+    android.hardware.health@1.0-impl
 
 # USB HAL
 PRODUCT_PACKAGES += \
