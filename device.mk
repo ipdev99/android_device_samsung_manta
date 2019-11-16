@@ -92,10 +92,10 @@ PRODUCT_COPY_FILES += \
 
 # BCM47511 GPS
 PRODUCT_COPY_FILES += \
-    device/samsung/manta/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    device/samsung/manta/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
     device/samsung/manta/gps/gpsd:$(TARGET_COPY_OUT_VENDOR)/bin/gpsd \
     device/samsung/manta/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml \
-    device/samsung/manta/gps/gps.manta.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gps.manta.so
+    device/samsung/manta/gps/gps.manta.so:$(TARGET_COPY_OUT_SYSTEM)/lib/hw/gps.manta.so
 
 # NFC packages
 #PRODUCT_PACKAGES += \
