@@ -71,13 +71,14 @@ PRODUCT_COPY_FILES += \
     device/samsung/manta/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 # audio effects
-PRODUCT_PACKAGES += libaudience_voicefx
+PRODUCT_PACKAGES := libaudience_voicefx
 PRODUCT_COPY_FILES += \
     device/samsung/manta/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/fmas_eq.dat:$(TARGET_COPY_OUT_VENDOR)/etc/fmas_eq.dat \
     $(LOCAL_PATH)/libfmas.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libfmas.so
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service.legacy \
     libwpa_client \
     hostapd \
     wificond \
